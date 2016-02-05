@@ -1,0 +1,34 @@
+{
+  "name": "turbotape",
+  "version": "0.1.0",
+  "description": "Fast and loose serial port uploader for ESP8266 with NodeMCU firmware",
+  "preferGlobal": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/augustzf/turbotape.git"
+  },
+  "keywords": [
+    "esp8266",
+    "nodemcu"
+  ],
+  "author": "August Flatby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/augustzf/turbotape/issues"
+  },
+  "bin": {
+    "turbotape": "turbotape.js"
+  },
+  "homepage": "https://github.com/augustzf/turbotape#readme",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "luamin": "^0.2.8",
+    "path": "^0.12.7",
+    "serialport": "^2.0.6",
+    "sha1": "^1.1.1",
+    "yargs": "^3.32.0"
+  }
+}
