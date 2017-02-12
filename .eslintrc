@@ -1,0 +1,53 @@
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "no-console": "off",
+    "strict": [
+      "error",
+      "global"
+    ],
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-eval": [
+      "error"
+    ],
+    "eqeqeq": [
+      "error"
+    ],
+    "no-implicit-globals": [
+      "error"
+    ],
+    "func-style": [
+      "error",
+      "expression"
+    ],
+    "no-redeclare": [
+      "error"
+    ]
+  }
+}
