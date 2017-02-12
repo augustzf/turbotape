@@ -1,17 +1,24 @@
-function turbotape(f)
+function turbotape(f, len)
+  local CHUNK_SIZE = 40
+  local received = 0
   local b,n="",0
   file.open(f,"w")
-  uart.on("data", "\n", function(d)
-    local l=string.len(d)
-    if n+l > 1024 then
+  uart.on("data", CHUNK_SIZE, function(d)
+    --local l=string.len(d)
+    received = received + CHUNK_SIZE
+    if n+CHUNK_SIZE > 1024 then
       file.write(b)
       file.flush()
       b,n="",0
     end
-    if string.sub(d,0,3)~="EOF" then
+    if received < len then
       b=b..d
-      n=n+l
+      n=n+CHUNK_SIZE
     else
+      local remainder = len % CHUNK_SIZE
+      if remainder > 0 then
+        b=b:sub(1,-(remainder+1))
+      end
       file.write(b)
       file.flush()
       file.close()
@@ -23,3 +30,4 @@ function turbotape(f)
   end, 0)
   print("READY")
 end
+print("Turbotape is ready!")
